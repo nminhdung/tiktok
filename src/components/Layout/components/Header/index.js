@@ -3,13 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleQuestion,
     faCircleXmark,
-    faCloudUpload,
     faCoins,
     faEarthAsia,
     faEllipsisVertical,
     faGear,
     faMagnifyingGlass,
-    faMessage,
     faSignOut,
     faSpinner,
     faUpload,
@@ -25,7 +23,9 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { useEffect, useState } from 'react';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
+import Image from '~/components/Image';
 import { faKeyboard } from '@fortawesome/free-regular-svg-icons';
+import { InboxIcon, MessageIcon, SearchIcon, UploadIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -126,7 +126,7 @@ function Header() {
                         <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
 
                         <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            <SearchIcon />
                         </button>
                     </div>
                 </HeadlessTippy>
@@ -136,11 +136,14 @@ function Header() {
                         <>
                             <Tippy delay={[0, 250]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
                             <button className={cx('action-btn')}>
-                                <FontAwesomeIcon icon={faMessage} />
+                                <MessageIcon />
+                            </button>
+                            <button className={cx('action-btn')}>
+                                <InboxIcon />
                             </button>
                         </>
                     ) : (
@@ -151,10 +154,11 @@ function Header() {
                     )}
                     <Menu menuItems={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 src="https://p77-sign-va.tiktokcdn.com/musically-maliva-obj/1653272836951046~c5_100x100.jpeg?x-expires=1652580000&x-signature=HlnoinAp0TYeWFrQh7FknWBuiOw%3D"
                                 className={cx('user-avatar')}
                                 alt="Nguyen van a"
+                                fallback="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/dab08a5bf0ca9ac042cd4c20c6458022.jpeg?x-expires=1652835600&x-signature=Et9Kr3cC5MIEn7i3KdfJgMCrcXA%3D"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
