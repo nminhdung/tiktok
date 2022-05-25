@@ -119,7 +119,6 @@ function Header() {
                                 src="https://p77-sign-va.tiktokcdn.com/musically-maliva-obj/1653272836951046~c5_100x100.jpeg?x-expires=1652580000&x-signature=HlnoinAp0TYeWFrQh7FknWBuiOw%3D"
                                 className={cx('user-avatar')}
                                 alt="Nguyen van a"
-                                fallback="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/dab08a5bf0ca9ac042cd4c20c6458022.jpeg?x-expires=1652835600&x-signature=Et9Kr3cC5MIEn7i3KdfJgMCrcXA%3D"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
