@@ -1,4 +1,5 @@
 import Tippy from '@tippyjs/react/headless';
+
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
@@ -47,7 +48,7 @@ function Menu({ menuItems = [], children, onChange = defaultFunction, hideOnClic
                                 onBack={() => setHistory((prev) => prev.slice(0, prev.length - 1))}
                             />
                         )}
-                        {renderItem()}
+                        <div className={cx('menu-body')}> {renderItem()}</div>
                     </PopperWrapper>
                 </div>
             )}

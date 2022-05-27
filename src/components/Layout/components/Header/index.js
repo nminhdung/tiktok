@@ -12,6 +12,7 @@ import {
 import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import 'tippy.js/animations/scale.css';
 
 import routesConfig from '~/config/routes';
 import styles from './Header.module.scss';
@@ -99,7 +100,13 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Tippy delay={[0, 250]} content="Upload video" placement="bottom">
+                            <Tippy
+                                animation="scale"
+                                offset={[0, 10]}
+                                delay={[0, 250]}
+                                content="Upload video"
+                                placement="bottom"
+                            >
                                 <button className={cx('action-btn')}>
                                     <UploadIcon />
                                 </button>
