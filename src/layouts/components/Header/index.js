@@ -14,7 +14,7 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/scale.css';
 
-import routesConfig from '~/config/routes';
+import config from '~/config';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import Search from '../Search';
@@ -93,7 +93,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home} className={cx('logo-link')}>
+                <Link to={config.routes.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="tiktok" />
                 </Link>
                 <Search />
@@ -127,11 +127,7 @@ function Header() {
                     )}
                     <Menu menuItems={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <Image
-                                src="https://p77-sign-va.tiktokcdn.com/musically-maliva-obj/1653272836951046~c5_100x100.jpeg?x-expires=1652580000&x-signature=HlnoinAp0TYeWFrQh7FknWBuiOw%3D"
-                                className={cx('user-avatar')}
-                                alt="Nguyen van a"
-                            />
+                            <Image src="" className={cx('user-avatar')} alt="Nguyen van a" />
                         ) : (
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical} />
