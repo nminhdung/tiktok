@@ -12,8 +12,6 @@ function Button({
     text = false,
     disabled = false,
     rounded = false,
-    // size,
-    // type,
     small = false,
     large = false,
     leftIcon,
@@ -66,6 +64,19 @@ function Button({
     );
 }
 Button.propTypes = {
+    to: PropTypes.string,
+    href: PropTypes.string,
+    primary: PropTypes.bool,
+    outline: PropTypes.bool,
+    text: PropTypes.bool,
+    disabled: PropTypes.bool,
+    rounded: PropTypes.bool,
+    small: PropTypes.bool,
+    large: PropTypes.bool,
+    leftIcon: PropTypes.node,
+    rightIcon: PropTypes.node,
+    onClick: PropTypes.func,
+    className: PropTypes.string,
     children: PropTypes.node.isRequired,
 };
 export default Button;
